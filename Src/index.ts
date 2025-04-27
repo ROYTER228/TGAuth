@@ -4,6 +4,9 @@
  * Основной модуль, экспортирующий все компоненты библиотеки
  */
 
+// Фабрика для создания экземпляра TGAuth
+export { createTelegramAuth } from './createTelegramAuth.js'
+
 // Методы авторизации
 export { DeeplinkAuth } from './Auth/DeeplinkAuth.js'
 export { CodeAuth } from './Auth/CodeAuth.js'
