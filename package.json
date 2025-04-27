@@ -1,0 +1,86 @@
+{
+  "name": "tgauth",
+  "version": "1.0.0",
+  "description": "Универсальная авторизация через Telegram с поддержкой различных методов и интеграций",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./vue": {
+      "import": "./dist/components/vue/index.js",
+      "types": "./dist/components/vue/index.d.ts"
+    },
+    "./react": {
+      "import": "./dist/components/react/index.js",
+      "types": "./dist/components/react/index.d.ts"
+    }
+  },
+  "scripts": {
+    "start": "node --loader ts-node/esm Src/index.ts",
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-server": "node --loader ts-node/esm Test/testAuth.ts",
+    "example:twofa": "node --loader ts-node/esm examples/twoFAExample.ts",
+    "example:widget": "node --loader ts-node/esm examples/widgetAuthExample.ts"
+  },
+  "type": "module",
+  "keywords": [
+    "telegram",
+    "auth",
+    "authentication",
+    "2fa",
+    "telegram-bot",
+    "telegram-login",
+    "telegram-widget",
+    "deeplink",
+    "grammy",
+    "telegraf",
+    "nestjs"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@types/express": "^5.0.1",
+    "express": "^5.1.0",
+    "grammy": "^1.36.1",
+    "path": "^0.12.7",
+    "socket.io": "^4.8.1",
+    "url": "^0.11.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.2",
+    "@types/react": "^18.2.0",
+    "react": "^18.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "vue": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "vue": {
+      "optional": true
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/tgauth.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/tgauth/issues"
+  },
+  "homepage": "https://github.com/yourusername/tgauth#readme"
+}
